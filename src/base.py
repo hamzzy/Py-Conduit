@@ -28,9 +28,9 @@ class BaseClient(object):
         """
         return {
             "Content-Type": "application/json",
-            "X-API-Key": "",
-            "X-API-Secret": "",
-            "user-agent": "Conduitpython SDK",
+            "X-API-Key": "2MCihSVKt38ItVKExvLpx5Z4atL",
+            "X-API-Secret": "6ufBvJDkYlXReUxphsagEHiyYP8N9xer1/+ZvzDa1GWpSvglqjaaUfMYcRg82pVLKagaSzn8Z8iwBzPs6MNZXg==",
+            "user-agent": "Conduit  python SDK",
         }
 
     def _handle_request(
