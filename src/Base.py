@@ -30,7 +30,7 @@ class BaseClient(object):
             "Content-Type": "application/json",
             "X-API-Key": "",
             "X-API-Secret": "",
-            "user-agent": "Conduitpython SDK",
+            "user-agent": "Conduit  python SDK",
         }
 
     def _handle_request(
@@ -43,8 +43,10 @@ class BaseClient(object):
         Generic function to handle all API url calls
         Returns a python tuple of status code,data
         """
-
-        payload = json.dumps({"data": data})
+        if data is None:
+            payload = None
+        else:
+            payload = json.dumps({"data": data})
 
         try:
             response = requests.request(
@@ -55,7 +57,7 @@ class BaseClient(object):
                 params=params,
             )
 
-            print(response.json())
+            print(response.url)
             if response.status_code == 400 or 401:
                 return response.json()
 
