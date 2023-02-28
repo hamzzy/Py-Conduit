@@ -44,10 +44,11 @@ class BaseClient(object):
         Returns a python tuple of status code,data
         """
         if data is None:
-            payload = None
+            payload=None
         else:
-            payload = json.dumps({"data": data})
+           payload = json.dumps({"data": data})
 
+        
         try:
             response = requests.request(
                 url=self.base_url + url_path,
